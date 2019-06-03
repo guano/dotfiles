@@ -22,20 +22,45 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'easymotion/vim-easymotion'
 
 "	SearchComplete. Tab completion inside of search
-"	Plugin 'vim-scripts/SearchComplete'
+	Plugin 'vim-scripts/SearchComplete'
 
 " Highlight words and stuff
 	Plugin 't9md/vim-quickhl'
+
+" Rainbow Parentheses
+" doesn't yet work. Needs some configuration?
+    Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
+" Vim-Surround
+    Plugin 'tpope/vim-surround'
+" cs"' inside " to change to single quotes.
+" cs]{ inside [] to change to curly braces (} for no space)
+" ds" inside " to delete them
+
+" Vim-repeat
+    Plugin 'tpope/vim-repeat'
+" can repeat vim-surround with the . command
+
+" Vim-Commentary
+    Plugin 'tpope/vim-commentary'
+" gcc comments a line
+" gc[motion] comments motion
+" Also uncomments. gcgc uncomments a whole bunch of commented lines
 
 "   Auto linter. Let's see how it looks
 "   ERORR: requires vim 8; not updated on nova yet
 "    Plugin 'w0rp/ale'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorschemes
+"
 " Supposed to be like elflord but better
 	Plugin 'agude/vim-eldar'
 
 " One I saw on vim-colors that looks good
 	Plugin 'gkjgh/cobalt'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
 "
@@ -49,7 +74,9 @@ Plugin 'VundleVim/Vundle.vim'
 "   New. So might not be good. Note: requires 7.4.330+ 
 "    Plugin 'Yggdroot/LeaderF'
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Verilog stuff
+"
 "   Should be good stuff for verilog
     Plugin 'vhda/verilog_systemverilog.vim'
 
@@ -73,7 +100,6 @@ nmap <Space>j <Plug>(quickhl-cword-toggle)
 nmap <Space>] <Plug>(quickhl-tag-toggle)
 "map H <Plug>(operator-quickhl-manual-this-motion)
 ":QuickhlCwordEnable
-
 
 
 
