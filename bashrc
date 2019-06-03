@@ -1,3 +1,44 @@
+# Comment out these lines to control prompt style
+export SECTURION_FULL_PROMPT=comment_to_disable
+export SECTURION_COLOR_PROMPT=comment_to_disable
+
+# Comment out to disable default Python script
+export SECTURION_PYTHON=comment_to_disable
+
+# Comment out this line to disable help message
+SECTURION_PRINT_HELP=comment_to_disable
+
+# Use the git prompt script provided with git
+USE_GIT_PROMPT=comment_to_disable
+# Options to change how the git prompt displays things
+GIT_PS1_SHOWDIRTYSTATE=1 #show * for unstaged and + for staged changes
+GIT_PS1_SHOWSTASHSTATE=1 #show $ if stash exists
+#GIT_PS1_SHOWUNTRACKEDFILES=1 #show % is there are untracked files
+#GIT_PS1_SHOWUPSTREAM="auto" #'auto' or 'verbose' print if HEAD and origin are off
+#GIT_PS1_STATESEPARATOR=SP  #if not SP will change character between fields
+GIT_PS1_SHOWCOLORHINTS=1 #show colors on state
+#GIT_PS1_HIDE_IF_PWD_IGNORED=1 #don't show git prompt if in untracked directory
+
+if [ -n "${SECTURION_PRINT_HELP}" ]; then
+   echo "Tips: edit .bashrc to customize your environment."
+   echo "* History: commands starting with space will not be preserved between sessions"
+   echo "         * duplicate commands will only be preserved once"
+   echo "         * directory history can be accessed with 'd' command"
+   echo "         * change back to last directory with 'popd' command"
+   echo "* Completions: push <TAB> to autocomplete many commands"
+if [ -n "${SECTURION_PYTHON}" ]; then
+   echo "* Python: type 'hexon' or 'hexoff' to change how numbers are printed"
+   echo "        * imports os,sys,re and sleep by default"
+fi
+   echo "* Emacs: sensible defaults, comment out 'load' command in .emacs to disable"
+   echo "* Git: autocomplete for git commands"
+   echo "     * useful aliases, see .secturion-environment/secturion.gitconfig for list"
+   echo "* scripts: shortcuts for various 'ls' variants, plus extras in "
+   echo "           .secturion-environment/scripts"
+fi
+
+. ~/.secturion-environment/secturion.bash
+
 
 
 
@@ -175,3 +216,4 @@ fi
 module load gcc
 module load mentor/questa_10.6
 
+source /tools/modules/gitpath/gitpathbin.sh

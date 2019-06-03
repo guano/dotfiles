@@ -25,7 +25,7 @@ Plugin 'VundleVim/Vundle.vim'
 "	Plugin 'vim-scripts/SearchComplete'
 
 " Highlight words and stuff
-"	Plugin 't9md/vim-quickhl'
+	Plugin 't9md/vim-quickhl'
 
 "   Auto linter. Let's see how it looks
 "   ERORR: requires vim 8; not updated on nova yet
@@ -36,9 +36,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 " One I saw on vim-colors that looks good
 	Plugin 'gkjgh/cobalt'
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy Finders!
+"
 " I am told this is awesome but I don't have time to look at it right now
+" It's a fuzzy finder and requires fzf to be already installed.
 "   Plugin 'junegunn/fzf.vim'
+"   Standard. People say it's slow unless you install other stuff
+    Plugin 'ctrlpvim/ctrlp.vim'
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlPMixed'
+"   New. So might not be good. Note: requires 7.4.330+ 
+"    Plugin 'Yggdroot/LeaderF'
+
 
 "   Should be good stuff for verilog
     Plugin 'vhda/verilog_systemverilog.vim'
@@ -54,13 +64,13 @@ filetype plugin indent on    " required
 
 "	quickhl setup
 "	I forget what all this does. Needs learning
-"nmap <Space>m <Plug>(quickhl-manual-this)
-"xmap <Space>m <Plug>(quickhl-manual-this)
-"nmap <Space>M <Plug>(quickhl-manual-reset)
-"xmap <Space>M <Plug>(quickhl-manual-reset)
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 
-"nmap <Space>j <Plug>(quickhl-cword-toggle)
-"nmap <Space>] <Plug>(quickhl-tag-toggle)
+nmap <Space>j <Plug>(quickhl-cword-toggle)
+nmap <Space>] <Plug>(quickhl-tag-toggle)
 "map H <Plug>(operator-quickhl-manual-this-motion)
 ":QuickhlCwordEnable
 
@@ -80,6 +90,11 @@ autocmd Filetype Verilog setlocal ts=2 sw=2 expandtab
 autocmd Filetype verilog setlocal ts=2 sw=2 expandtab
 autocmd Filetype verilog_systemverilog setlocal ts=2 sw=2 expandtab
 
+" This does not seem to work :(
+autocmd Filetype Systemverilog setlocal foldmethod=manual
+autocmd Filetype Verilog setlocal foldmethod=manual
+autocmd Filetype verilog setlocal foldmethod=manual
+autocmd Filetype verilog_systemverilog setlocal foldmethod=manual
 
 syntax on
 set foldmethod=syntax
@@ -129,7 +144,6 @@ hi folded ctermbg=023
 "   I got tired of the withe hilighting of text. A more gray makes the cursor
 "   more visible
 hi Visual ctermbg=246
-
 hi Search ctermbg=32
 
 
