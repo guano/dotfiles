@@ -30,7 +30,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Rainbow Parentheses
 " doesn't yet work. Needs some configuration?
     Plugin 'luochen1990/rainbow'
-let g:rainbow_active = 1
 
 " Vim-Surround
     Plugin 'tpope/vim-surround'
@@ -177,6 +176,14 @@ hi Search ctermbg=32
 "   mostly for NERDtree. directories were a dark blue. make them a green
 hi Directory ctermfg=40
 hi Directory guifg=#00d700
+
+" Colors for rainbow
+let g:rainbow_active = 1
+" Pink, Yellow, Green, White, Blue
+let g:rainbow_conf = {
+\   'ctermfgs': [13, 11, 10, 15, 39],
+\}
+
 
 
 "   This hilights trailing spaces (among other things) in C code
