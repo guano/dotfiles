@@ -54,6 +54,7 @@ let g:rainbow_active = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorschemes
+" http://vimcolors.com/ is an amazing resource for these
 "
 " Supposed to be like elflord but better
 	Plugin 'agude/vim-eldar'
