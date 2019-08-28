@@ -61,6 +61,15 @@ Plugin 'VundleVim/Vundle.vim'
 " One I saw on vim-colors that looks good
 	Plugin 'gkjgh/cobalt'
 
+" Spacecamp. Purple, white, green
+    Plugin 'jaredgorski/SpaceCamp'
+
+" Abstract. Maroon, Indico, Teal, Cyan, Yellow
+    Plugin 'jdsimcoe/abstract.vim'
+
+" meta5. Turquoise, blue, navy, purple, rust
+    Plugin 'christophermca/meta5'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
 "
