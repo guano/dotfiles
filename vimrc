@@ -109,6 +109,21 @@ nmap <Space>j <Plug>(quickhl-cword-toggle)
 nmap <Space>] <Plug>(quickhl-tag-toggle)
 "map H <Plug>(operator-quickhl-manual-this-motion)
 ":QuickhlCwordEnable
+let g:quickhl_manual_colors = [
+    \ "gui=bold ctermfg=0  ctermbg=153 guifg=#ffffff guibg=#0a7383",
+    \ "gui=bold ctermfg=0   ctermbg=9   guibg=#a07040 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=10   guibg=#4070a0 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=11   guibg=#40a070 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=14   guibg=#70a040 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=13   guibg=#0070e0 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=183   guibg=#007020 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=75  guibg=#d4a00d guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=194  guibg=#06287e guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=45  guibg=#5b3674 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=16  guibg=#4c8f2f guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=50  guibg=#1060a0 guifg=#ffffff",
+    \ "gui=bold ctermfg=0   ctermbg=56  guibg=#a0b0c0 guifg=black",
+    \ ]
 
 
 
