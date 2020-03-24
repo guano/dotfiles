@@ -69,6 +69,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " meta5. Turquoise, blue, navy, purple, rust
     Plugin 'christophermca/meta5'
+    
+" I ported Xcode’s high contrast colourscheme variants to Vim 
+" https://www.reddit.com/r/vim/comments/f9rvrl/i_ported_xcodes_high_contrast_colourscheme/
+    Plugin  'arzg/vim-colors-xcode'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
