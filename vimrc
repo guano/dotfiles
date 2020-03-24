@@ -93,6 +93,10 @@ Plugin 'VundleVim/Vundle.vim'
 "   vimscripts script_id=1875
     Plugin 'verilog_emacsauto.vim'
 
+"   A not-very-good english but simple plugin to save folding information
+"   vimscripts #4021
+    Plugin 'vim-scripts/restore_view.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -212,10 +216,12 @@ let g:rainbow_conf = {
 
 "   This hilights trailing spaces (among other things) in C code
 let c_space_errors = 1
+hi TrailingWhitespace ctermbg=1
+match TrailingWhitespace / \+$/
 
 
 "   This lets the mouse work in terminal vim like it does in gvim.
-"   2 downsides: it lets you use the mouse (bad form) and copy/paste no longer 
+"   2 downsides: it lets you use the mouse (bad form) and copy/paste no longer
 "   works (hilighting with mouse goes into visual mode)
 "   sometimes I get weird hilight errors with cobalt, but I am pretty sure
 "   that just happens when I use the mouse in terminal vim without the
