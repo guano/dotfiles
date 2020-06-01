@@ -6,7 +6,7 @@ export SECTURION_COLOR_PROMPT=comment_to_disable
 export SECTURION_PYTHON=comment_to_disable
 
 # Comment out this line to disable help message
-SECTURION_PRINT_HELP=comment_to_disable
+#SECTURION_PRINT_HELP=comment_to_disable
 
 # Use the git prompt script provided with git
 USE_GIT_PROMPT=comment_to_disable
@@ -214,6 +214,6 @@ fi
 . /etc/profile.d/modules.sh
 . /tools/modules/modules_defaults.sh
 module load gcc
-module load mentor/questa_10.6
+module load mentor/questa_10.7_1
 
 source /tools/modules/gitpath/gitpathbin.sh

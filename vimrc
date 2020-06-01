@@ -69,10 +69,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 " meta5. Turquoise, blue, navy, purple, rust
     Plugin 'christophermca/meta5'
-    
-" I ported Xcode’s high contrast colourscheme variants to Vim 
+
+" I ported Xcode’s high contrast colourscheme variants to Vim
 " https://www.reddit.com/r/vim/comments/f9rvrl/i_ported_xcodes_high_contrast_colourscheme/
-    Plugin  'arzg/vim-colors-xcode'
+    Plugin 'arzg/vim-colors-xcode'
+
+" A cool colorscheme I discovered on reddit
+" But installation is broken. Maybe it wants neovim?
+    Plugin 'kyoz/purify', { 'rtp': 'vim' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
@@ -84,7 +88,7 @@ Plugin 'VundleVim/Vundle.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlPMixed'
-"   New. So might not be good. Note: requires 7.4.330+ 
+"   New. So might not be good. Note: requires 7.4.330+
 "    Plugin 'Yggdroot/LeaderF'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,8 +142,8 @@ let g:quickhl_manual_colors = [
 set shell=bash
 
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab "FOR WORK WE USE SPACES, NOT TABS
 "set filetype indent on
 "set guifont=Monospace:h11
@@ -174,6 +178,10 @@ set laststatus=2
 "	highlight search on.
 set hlsearch
 
+" case insensitive unless there's a capital. Smartcase requires ignorecase
+set ignorecase
+set smartcase
+
 "	This makes it so that you the cursor doesn't hang out at the bottom of the
 "	screen; it auto-scrolls the page with it! At EOF, push zz instead
 set scrolloff=10 "by 10 lines
@@ -189,7 +197,7 @@ endif
 "	sets the background color for hilighted text to be darker than normal
 "	but only for gvim. not for terminal vim. I prefer cobalt in terminal vim,
 "	but may want to change the highlight color later
-hi Visual guibg=#444444 
+hi Visual guibg=#444444
 hi Folded guibg=#222222
 
 "   Highlights the 80th column and changes the color to a very dull gray
@@ -220,8 +228,9 @@ let g:rainbow_conf = {
 
 "   This hilights trailing spaces (among other things) in C code
 let c_space_errors = 1
-hi TrailingWhitespace ctermbg=1
+hi TrailingWhitespace ctermbg=1   
 match TrailingWhitespace / \+$/
+    
 
 
 "   This lets the mouse work in terminal vim like it does in gvim.
@@ -231,6 +240,7 @@ match TrailingWhitespace / \+$/
 "   that just happens when I use the mouse in terminal vim without the
 "   following set. Will update if it keeps happening.
 "   UPDATE- to copy/paste use \"+y and \"+p instead of y and p
+set ttymouse=xterm2
 set mouse=a
 
 
