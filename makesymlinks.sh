@@ -9,7 +9,7 @@
 # Variables
 dir=~/dotfiles              # dotfiles directory
 olddir=~/dotfiles_old       # where old stuff goes
-files="bashrc vimrc" #  vim"    # list of files/folders to symlink in
+files="bashrc vimrc tmux.conf" #  vim"    # list of files/folders to symlink in
 
 ###########
 # create dotfiles_old in home_dir

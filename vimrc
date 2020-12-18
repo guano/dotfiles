@@ -51,6 +51,19 @@ Plugin 'VundleVim/Vundle.vim'
 "   ERORR: requires vim 8; not updated on nova yet
 "    Plugin 'w0rp/ale'
 
+" Visualstar: * and # searching of arbitrary text from Visual mode
+" ERROR: visualstar isn't compatible with your vim version :(
+"    Plugin 'subnut/visualstar.vim'
+
+" vim-asterisk: provides improved * motions.
+" ERROR: doesn't seem to work?
+"    Plugin 'haya14busa/vim-asterisk'
+    "1. stay star motions (z prefixed mappings): z star motions doesn't move your cursor.
+    "2. visual star motions: Search selected text
+    "3. Use smartcase unlike default one
+    "4. Keep cursor position across matches Add following line in your vimrc
+    "to enable this feature. let g:asterisk#keeppos = 1 (Default: 0)
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorschemes
 " http://vimcolors.com/ is an amazing resource for these
@@ -77,6 +90,11 @@ Plugin 'VundleVim/Vundle.vim'
 " A cool colorscheme I discovered on reddit
 " But installation is broken. Maybe it wants neovim?
     Plugin 'kyoz/purify', { 'rtp': 'vim' }
+
+" Another cool one on reddit
+    Plugin 'pineapplegiant/spaceduck'
+    " Doesn't seem to work on vim through tmux without some configuration.
+    " It's probably terminal truecolors causing issues
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
