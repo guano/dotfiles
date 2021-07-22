@@ -214,6 +214,7 @@ fi
 . /etc/profile.d/modules.sh
 . /tools/modules/modules_defaults.sh
 module load gcc
-module load mentor/questa_10.7_1
+module load mentor
+module load altera
 
 source /tools/modules/gitpath/gitpathbin.sh
