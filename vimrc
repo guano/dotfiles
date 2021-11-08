@@ -204,6 +204,9 @@ set smartcase
 "	screen; it auto-scrolls the page with it! At EOF, push zz instead
 set scrolloff=10 "by 10 lines
 
+" change direction of new splits
+set splitbelow
+set splitright
 
 """"""""""""""""""""""''''''''''''''''''''
 " Color settings
