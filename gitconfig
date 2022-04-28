@@ -1,0 +1,17 @@
+# Remove the next two lines to disable secturion environment shortcuts
+[include]
+  path = ~/.secturion-environment/secturion.gitconfig
+
+[user]
+	email = tcowley@secturion.com
+	name = Taylor Cowley
+[diff]
+	tool = vimdiff
+[alias]
+    l = log --branches --all --decorate --remotes --graph --abbrev --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+    ll = log --branches --all --decorate --remotes --graph --abbrev --pretty=format:'%C(yellow)%h %C(red)%ad %C(cyan)%an%C(auto)%d %C(auto)%s' --date=short
+    lg = log --branches --all --decorate --remotes --pretty=oneline --graph --abbrev --date=short
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
