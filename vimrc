@@ -47,6 +47,10 @@ Plugin 'VundleVim/Vundle.vim'
 " gc[motion] comments motion
 " Also uncomments. gcgc uncomments a whole bunch of commented lines
 
+" Git stuff in vim.
+" To open the same file in different revision `:Gvsplit master:%`
+    Plugin 'tpope/vim-fugitive'
+
 "   Auto linter. Let's see how it looks
 "   ERORR: requires vim 8; not updated on nova yet
 "    Plugin 'w0rp/ale'
