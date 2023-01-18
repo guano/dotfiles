@@ -127,6 +127,9 @@ Plugin 'VundleVim/Vundle.vim'
 "   vimscripts #4021
     Plugin 'vim-scripts/restore_view.vim'
 
+    " TODO: got from derek. Should do syntax things like folding
+    Plugin 'vimtaku/hl_matchit.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
