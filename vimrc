@@ -280,4 +280,10 @@ let g:rainbow_conf = {
 set ttymouse=xterm2
 set mouse=a
 
+" Change autocomplete to bring up a list, and autocomplete the string until
+" there's a mismatch. Change this to list:full if you want the menu but like
+" the old behavior better
+set wildmenu
+set wildmode:list:longest
+
 
