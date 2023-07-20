@@ -217,10 +217,25 @@ set splitright
 
 """"""""""""""""""""""''''''''''''''''''''
 " Color settings
+" TrailingWhitespace has to happen before colorscheme
+"   This hilights trailing spaces (among other things) in C code
+let c_space_errors = 1
+hi TrailingWhitespace ctermbg=1   
+hi TrailingWhitespace guibg=red   
+match TrailingWhitespace / \+$/
+    
+autocmd colorscheme * hi TrailingWhitespace guibg=red
+autocmd colorscheme * hi TrailingWhitespace ctermbg=1
+autocmd BufReadPre,FileReadPre * match TrailingWhitespace / \+$/
+
+
 "	elflord
 colorscheme cobalt
 if has('gui_running')
-    colorscheme eldar
+    "colorscheme eldar
+    " eldar doesn't work well with ctrl-p
+    " but cobalt in gvim is blue background. bad. make black.
+    hi Normal guibg=black
 endif
 "	sets the background color for hilighted text to be darker than normal
 "	but only for gvim. not for terminal vim. I prefer cobalt in terminal vim,
@@ -253,12 +268,6 @@ let g:rainbow_conf = {
 \}
 
 
-
-"   This hilights trailing spaces (among other things) in C code
-let c_space_errors = 1
-hi TrailingWhitespace ctermbg=1   
-match TrailingWhitespace / \+$/
-    
 
 
 "   This lets the mouse work in terminal vim like it does in gvim.
