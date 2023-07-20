@@ -6,15 +6,15 @@ export SECTURION_COLOR_PROMPT=comment_to_disable
 export SECTURION_PYTHON=comment_to_disable
 
 # Comment out this line to disable help message
-#SECTURION_PRINT_HELP=comment_to_disable
+SECTURION_PRINT_HELP=comment_to_disable
 
 # Use the git prompt script provided with git
 USE_GIT_PROMPT=comment_to_disable
 # Options to change how the git prompt displays things
 GIT_PS1_SHOWDIRTYSTATE=1 #show * for unstaged and + for staged changes
 GIT_PS1_SHOWSTASHSTATE=1 #show $ if stash exists
-#GIT_PS1_SHOWUNTRACKEDFILES=1 #show % is there are untracked files
-#GIT_PS1_SHOWUPSTREAM="auto" #'auto' or 'verbose' print if HEAD and origin are off
+GIT_PS1_SHOWUNTRACKEDFILES=1 #show % is there are untracked files
+GIT_PS1_SHOWUPSTREAM="auto" #'auto' or 'verbose' print if HEAD and origin are off
 #GIT_PS1_STATESEPARATOR=SP  #if not SP will change character between fields
 GIT_PS1_SHOWCOLORHINTS=1 #show colors on state
 #GIT_PS1_HIDE_IF_PWD_IGNORED=1 #don't show git prompt if in untracked directory
@@ -168,13 +168,13 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+#if ! shopt -oq posix; then
+#  if [ -f /usr/share/bash-completion/bash_completion ]; then
+#    . /usr/share/bash-completion/bash_completion
+#  elif [ -f /etc/bash_completion ]; then
+#    . /etc/bash_completion
+#  fi
+#fi
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
@@ -216,5 +216,6 @@ fi
 module load gcc
 module load mentor
 module load altera
+module load tmux
 
 source /tools/modules/gitpath/gitpathbin.sh
