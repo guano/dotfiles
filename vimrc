@@ -12,8 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 "	Plugin 'ervandew/supertab'
 
-"	Plugin 'scrooloose/nerdtree'
-	Plugin 'Xuyuanp/nerdtree-git-plugin'
+	Plugin 'scrooloose/nerdtree'
+	"Plugin 'Xuyuanp/nerdtree-git-plugin'
 	
 "	Why doesn't this status bar always work?
 	Plugin 'vim-airline/vim-airline'
