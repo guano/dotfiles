@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+  Plugin 'VundleVim/Vundle.vim'
 
 "	Plugin 'ervandew/supertab'
 
@@ -17,6 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 	
 "	Why doesn't this status bar always work?
 	Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'powerline/fonts'
 
 "	This looks fun to use
 	Plugin 'easymotion/vim-easymotion'
@@ -50,6 +52,39 @@ Plugin 'VundleVim/Vundle.vim'
 " Git stuff in vim.
 " To open the same file in different revision `:Gvsplit master:%`
     Plugin 'tpope/vim-fugitive'
+
+" Stuff to help with marks
+" https://github.com/kshenoy/vim-signature - a bit less than super-simple,
+" seems good
+"        mx           Toggle mark 'x' and display it in the leftmost column
+"        dmx          Remove mark 'x' where x is a-zA-Z
+"        m,           Place the next available mark
+"        m.           If no mark on line, place the next available mark.  Otherwise, remove (first) existing mark.
+"        m-           Delete all marks from the current line
+"        m<Space>     Delete all marks from the current buffer
+"        ]`           Jump to next mark
+"        [`           Jump to prev mark
+"        ]'           Jump to start of next line containing a mark
+"        ['           Jump to start of prev line containing a mark
+"        `]           Jump by alphabetical order to next mark
+"        `[           Jump by alphabetical order to prev mark
+"        ']           Jump by alphabetical order to start of next line having a mark
+"        '[           Jump by alphabetical order to start of prev line having a mark
+"        m/           Open location list and display marks from current buffer
+"        m[0-9]       Toggle the corresponding marker !@#$%^&*()
+"        m<S-[0-9]>   Remove all markers of the same type
+"        ]-           Jump to next line having a marker of the same type
+"        [-           Jump to prev line having a marker of the same type
+"        ]=           Jump to next line having a marker of any type
+"        [=           Jump to prev line having a marker of any type
+"        m?           Open location list and display markers from current buffer
+"        m<BS>        Remove all markers
+  Plugin 'kshenoy/vim-signature'
+" A simpler one https://github.com/jeetsukumaran/vim-markology
+"  Plugin 'jeetsukumaran/vim-markology'
+" This one looks exciting, with a popout display, but requires vim 8.1+
+" https://github.com/Yilin-Yang/vim-markbar
+"  Yilin-Yang/vim-markbar
 
 "   Auto linter. Let's see how it looks
 "   ERORR: requires vim 8; not updated on nova yet
@@ -133,6 +168,14 @@ Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" powerline fonts into airline
+" Couldn't ever get it working though
+"let g:airline_powerline_fonts = 1
+" Get us a random theme every time!
+let g:airline_theme='random' " doesnt seem to work though
+
+
 
 
 "	quickhl setup
@@ -285,5 +328,9 @@ set mouse=a
 " the old behavior better
 set wildmenu
 set wildmode:list:longest
+"   Not supported until vim 9
+"set wildoptions=pum
+"   Ignore case when in wildmenu (filenames, etc)
+set wildignorecase
 
 
