@@ -15,3 +15,5 @@
 	tool = vimdiff
 [core]
 	editor = vim
+[submodule]
+    fetchJobs = 8
