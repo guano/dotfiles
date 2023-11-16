@@ -173,7 +173,7 @@ filetype plugin indent on    " required
 " Couldn't ever get it working though
 "let g:airline_powerline_fonts = 1
 " Get us a random theme every time!
-let g:airline_theme='random' " doesnt seem to work though
+let g:airline_theme='random' " Causes a ton of errors when :source $MYVIMRC
 
 
 
@@ -262,6 +262,16 @@ set splitright
 " Color settings
 " TrailingWhitespace has to happen before colorscheme
 "   This hilights trailing spaces (among other things) in C code
+" colorscheme clears all highlight groups, so set it before doing all your
+" extra stuff
+colorscheme cobalt
+if has('gui_running')
+    "colorscheme eldar
+    " eldar doesn't work well with ctrl-p
+    " but cobalt in gvim is blue background. bad. make black.
+    hi Normal guibg=black
+endif
+
 let c_space_errors = 1
 hi TrailingWhitespace ctermbg=1   
 hi TrailingWhitespace guibg=red   
@@ -270,16 +280,15 @@ match TrailingWhitespace / \+$/
 autocmd colorscheme * hi TrailingWhitespace guibg=red
 autocmd colorscheme * hi TrailingWhitespace ctermbg=1
 autocmd BufReadPre,FileReadPre * match TrailingWhitespace / \+$/
+"hi link TrailingWhitespace Error is an option; the Error highlight group already exists
+" see https://vi.stackexchange.com/questions/38433/how-can-i-use-the-error-color-for-guibg-and-ctermbg
+
+" We want to get an existing highlight group and make one small change. Looks
+" like that's not possible until vim 8.2+ with hlget() and hlset()
+hi SignatureMarkLine ctermbg=53  guibg=#5f005f
 
 
-"	elflord
-colorscheme cobalt
-if has('gui_running')
-    "colorscheme eldar
-    " eldar doesn't work well with ctrl-p
-    " but cobalt in gvim is blue background. bad. make black.
-    hi Normal guibg=black
-endif
+
 "	sets the background color for hilighted text to be darker than normal
 "	but only for gvim. not for terminal vim. I prefer cobalt in terminal vim,
 "	but may want to change the highlight color later
