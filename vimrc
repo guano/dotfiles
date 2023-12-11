@@ -149,6 +149,15 @@ call vundle#begin()
 "    Plugin 'Yggdroot/LeaderF'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+" ctags help
+
+"   Source Code Browser plugin for Vim - can show all the tags
+" doesn't seem to work
+    "Plugin 'yegappan/taglist'
+
+" Ctags class outline viewer
+    Plugin 'majutsushi/tagbar'
+
 " Verilog stuff
 "
 "   Should be good stuff for verilog
@@ -174,6 +183,14 @@ filetype plugin indent on    " required
 "let g:airline_powerline_fonts = 1
 " Get us a random theme every time!
 let g:airline_theme='random' " Causes a ton of errors when :source $MYVIMRC
+
+" ctags optimization if vim doesn't find tags in $PWD it looks in parents.
+" tags=tags tells vim that the tags file will always be named tags
+set autochdir
+set tags=tags;
+
+" It was hardcoded to /usr/local/bin but we have a better one module loaded
+let g:tagbar_ctags_bin = 'ctags'
 
 
 
@@ -219,12 +236,12 @@ autocmd Filetype Systemverilog setlocal ts=2 sw=2 expandtab
 autocmd Filetype Verilog setlocal ts=2 sw=2 expandtab
 autocmd Filetype verilog setlocal ts=2 sw=2 expandtab
 autocmd Filetype verilog_systemverilog setlocal ts=2 sw=2 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 " This does not seem to work :(
-autocmd Filetype Systemverilog setlocal foldmethod=manual
-autocmd Filetype Verilog setlocal foldmethod=manual
-autocmd Filetype verilog setlocal foldmethod=manual
-autocmd Filetype verilog_systemverilog setlocal foldmethod=manual
+autocmd Filetype Systemverilog setlocal foldmethod=indent
+autocmd Filetype Verilog setlocal foldmethod=indent
+autocmd Filetype verilog_systemverilog setlocal foldmethod=indent
 
 syntax on
 set foldmethod=syntax
