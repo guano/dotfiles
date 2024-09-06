@@ -11,6 +11,7 @@
     l = log --branches --all --decorate --remotes --graph --abbrev --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
     ll = log --branches --all --decorate --remotes --graph --abbrev --pretty=format:'%C(yellow)%h %C(red)%ad %C(cyan)%an%C(auto)%d %C(auto)%s' --date=short
     lg = log --branches --all --decorate --remotes --pretty=oneline --graph --abbrev --date=short
+    mr = push -o merge_request.create -o merge_request.target=master -o merge_request.remove_source_branch origin HEAD
 [merge]
 	tool = vimdiff
 [core]
