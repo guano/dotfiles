@@ -219,3 +219,8 @@ module load altera
 module load tmux
 
 source /tools/modules/gitpath/gitpathbin.sh
+
+# Learned from https://nickjanetakis.com/blog/fuzzy-search-your-bash-history-in-style-with-fzf
+# add fzf search to ctrl-r
+# TODO: don't do this if fzf isn't installed
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
