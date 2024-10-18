@@ -38,6 +38,7 @@ fi
 fi
 
 . ~/.secturion-environment/secturion.bash
+source /usr/lib/git-core/git-sh-prompt
 
 
 
@@ -224,3 +225,5 @@ source /tools/modules/gitpath/gitpathbin.sh
 # add fzf search to ctrl-r
 # TODO: don't do this if fzf isn't installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fastfetch
+#source "$HOME/.cargo/env"

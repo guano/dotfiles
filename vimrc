@@ -174,6 +174,11 @@ call vundle#begin()
     " TODO: got from derek. Should do syntax things like folding
     Plugin 'vimtaku/hl_matchit.vim'
 
+    " Vlime for common lisp inside of vim
+    "Plugin 'vlime/vlime', {'rtp': 'vim/'}
+    "prevents me from editing parentheses!
+    "Plugin 'kovisoft/paredit'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
