@@ -225,5 +225,8 @@ source /tools/modules/gitpath/gitpathbin.sh
 # add fzf search to ctrl-r
 # TODO: don't do this if fzf isn't installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
 fastfetch
 #source "$HOME/.cargo/env"

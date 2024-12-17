@@ -135,12 +135,17 @@ call vundle#begin()
     " Doesn't seem to work on vim through tmux without some configuration.
     " It's probably terminal truecolors causing issues
 
+" Stupid. Make rainbows
+    "Plugin 'sedm0784/vim-rainbow-trails'
+    " RainbowTrails to turn on
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finders!
 "
 " I am told this is awesome but I don't have time to look at it right now
 " It's a fuzzy finder and requires fzf to be already installed.
-"   Plugin 'junegunn/fzf.vim'
+    Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plugin 'junegunn/fzf.vim'
 "   Standard. People say it's slow unless you install other stuff
     Plugin 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_map = '<c-p>'
