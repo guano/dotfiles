@@ -184,9 +184,37 @@ call vundle#begin()
     "prevents me from editing parentheses!
     "Plugin 'kovisoft/paredit'
 
+    " Vim which key. timing out the leader key should pop up a help menu
+    Plugin 'liuchengxu/vim-which-key'
+
+    " Options for language servers:
+    " https://bluz71.github.io/2019/10/16/lsp-in-vim-with-the-lsc-plugin.html
+    " https://github.com/vim-scripts/VimCompletesMe
+    " https://github.com/prabirshrestha/vim-lsp
+    " https://github.com/natebosch/vim-lsc
+    " https://langserver.org/
+    " https://microsoft.github.io/language-server-protocol/implementors/servers/
+    "
+    " Systemverilog language servers
+    " Veridian. Recommends installing verible as well?
+    " https://github.com/vivekmalneedi/veridian?tab=readme-ov-file
+    " Doesn't look good
+    " https://github.com/dalance/svls
+    " Verible
+    " https://github.com/chipsalliance/verible
+    " I think veridian and verible are the most promising
+
+    " Language server
+    " lsc needs vim 8
+    "Plugin 'natebosch/vim-lsc'
+    " lsp needs vim 8
+    "Plugin 'prabirshrestha/vim-lsp'
+    "Plugin 'vim-scripts/VimCompletesMe'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 
 " powerline fonts into airline
 " Couldn't ever get it working though
@@ -232,6 +260,8 @@ let g:quickhl_manual_colors = [
     \ "gui=bold ctermfg=0   ctermbg=56  guibg=#a0b0c0 guifg=black",
     \ ]
 
+" syntax hilighting
+syntax on
 
 
 set shell=bash
@@ -253,12 +283,14 @@ autocmd Filetype Systemverilog setlocal foldmethod=indent
 autocmd Filetype Verilog setlocal foldmethod=indent
 autocmd Filetype verilog_systemverilog setlocal foldmethod=indent
 
-syntax on
 set foldmethod=syntax
 autocmd FileType python setlocal foldmethod=indent
 "set foldcolumn=4 "(or 1)
 
+" Turn linenumbers on
 set number
+
+" Allow backspace do delete auto-inserted stuff like indentation
 set backspace=2
 
 "	This, among other things, will display the leader key when I press it.
@@ -284,6 +316,74 @@ set scrolloff=10 "by 10 lines
 " change direction of new splits
 set splitbelow
 set splitright
+
+
+" LSC settings
+"let g:lsc_server_commands = {
+" \  'systemverilog': {
+" \    'command': 'verible-verilog-ls',
+" \    'log_level': -1,
+" \    'suppress_stderr': v:true,
+" \  },
+" \  'javascript': {
+" \    'command': 'typescript-language-server --stdio',
+" \    'log_level': -1,
+" \    'suppress_stderr': v:true,
+" \  }
+" \}
+"let g:lsc_auto_map = {
+" \  'GoToDefinition': 'gd',
+" \  'FindReferences': 'gr',
+" \  'Rename': 'gR',
+" \  'ShowHover': 'K',
+" \  'FindCodeActions': 'ga',
+" \  'Completion': 'omnifunc',
+" \}
+"let g:lsc_enable_autocomplete  = v:true
+"let g:lsc_enable_diagnostics   = v:true
+"let g:lsc_reference_highlights = v:false
+"let g:lsc_trace_level          = 'off'
+"
+
+"" LSP settings
+"if executable('verible-verilog-ls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'verible-verilog-ls',
+"        \ 'cmd': {server_info->['verible-verilog-ls']},
+"        \ 'allowlist': ['verilog', 'systemverilog'],
+"        \ })
+"endif
+
+"function! s:on_lsp_buffer_enabled() abort
+"    setlocal omnifunc=lsp#complete
+"    setlocal signcolumn=yes
+"    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+"    nmap <buffer> gd <plug>(lsp-definition)
+"    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+"    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+"    nmap <buffer> gr <plug>(lsp-references)
+"    nmap <buffer> gi <plug>(lsp-implementation)
+"    nmap <buffer> gt <plug>(lsp-type-definition)
+"    nmap <buffer> <leader>rn <plug>(lsp-rename)
+"    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+"    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+"    nmap <buffer> K <plug>(lsp-hover)
+"    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+"    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+"
+"    let g:lsp_format_sync_timeout = 1000
+"    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+"
+"    " refer to doc to add more commands
+"endfunction
+"
+"augroup lsp_install
+"    au!
+"    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+"    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+"augroup END
+
+" set completeopt=menu,menuone,noinsert,noselect,preview
 
 """"""""""""""""""""""''''''''''''''''''''
 " Color settings
@@ -319,8 +419,8 @@ hi SignatureMarkLine ctermbg=53  guibg=#5f005f
 "	sets the background color for hilighted text to be darker than normal
 "	but only for gvim. not for terminal vim. I prefer cobalt in terminal vim,
 "	but may want to change the highlight color later
-hi Visual guibg=#444444
-hi Folded guibg=#222222
+hi Visual guibg=#555555
+hi Folded guibg=#444444
 
 "   Highlights the 80th column and changes the color to a very dull gray
 "   For color options look up "xterm-256-color chart"
@@ -347,6 +447,8 @@ let g:rainbow_conf = {
 \}
 
 
+" For gvim. Size 16 for 4K monitor
+set guifont=Hack\ 16
 
 
 "   This lets the mouse work in terminal vim like it does in gvim.
@@ -369,4 +471,5 @@ set wildmode:list:longest
 "   Ignore case when in wildmenu (filenames, etc)
 set wildignorecase
 
+"set omnifunc=syntaxcomplete#Complete
 

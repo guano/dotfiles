@@ -157,6 +157,8 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias fixsshsdisplay="export DISPLAY=\"`tmux show-env | sed -n 's/^DISPLAY=//p'`\""
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -212,14 +214,20 @@ fi
 
 
 
-. /etc/profile.d/modules.sh
+#. /etc/profile.d/modules.sh
 . /tools/modules/modules_defaults.sh
 module load gcc
 module load mentor
 module load altera
 module load tmux
 
+echo "about to do gitpathbin"
 source /tools/modules/gitpath/gitpathbin.sh
+echo "done gitpathbin"
+
+# Set vim as default editor. Remember you can [ctrl-x][ctrl-e] to open up the current command in your editor
+# https://dev.to/chhajedji/bash-edit-command-in-your-editor-and-execute-directly-30ef
+export EDITOR="$(which vim)"
 
 # Learned from https://nickjanetakis.com/blog/fuzzy-search-your-bash-history-in-style-with-fzf
 # add fzf search to ctrl-r
